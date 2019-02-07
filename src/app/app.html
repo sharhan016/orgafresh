@@ -1,0 +1,39 @@
+<ion-menu [content]="content">
+    <ion-header style="height: 200px; width: 300px  !important">
+      <img src="../assets/imgs/sidemenuicon.png">
+      <!-- <ion-toolbar >
+        <ion-title>Menu</ion-title> 
+      </ion-toolbar> -->
+
+    </ion-header>
+   
+    <ion-content class="menu">
+      <ion-list >
+        <ion-item ion-item *ngFor="let p of pages;  let i=index" (click)="openPage(p, i);" class="custom">
+          <ion-row>
+            <!-- Parent Pages  -->
+            <ion-col col-9 class="menu-name">
+              <span ion-text>
+                {{p.title}}
+                <ion-icon [name]="selectedMenu == i? 'arrow-down' : 'arrow-forward'" *ngIf="p.subPages"></ion-icon>
+              </span>
+  
+              <!-- Child Pages  -->
+              <ion-list no-lines [hidden]="selectedMenu != i" >
+                <ion-item no-border *ngFor="let subPage of p.subPages;let i2=index" text-wrap (click)="openPage(subPage)">
+                  <ion-row>
+                    <ion-col col-10 class="menu-name"><span ion-text color="color2">&nbsp;{{subPage.name}}</span></ion-col>
+                  </ion-row>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+  
+      </ion-list>
+    </ion-content>
+  
+  </ion-menu>
+  
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

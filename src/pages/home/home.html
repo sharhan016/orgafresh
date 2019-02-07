@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+ 
+    <ion-title>
+      OrgaFresh
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color: #D0D0CE;">
+  <ion-searchbar [(ngModel)]="searchTerm" [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
+  <div *ngIf="searchTerm" class="spinner-container">
+    <ion-spinner></ion-spinner>
+</div>
+  <ion-list>
+      <ion-item *ngFor="let item of items" (click)="searchItem(item)">
+          {{item.name}}
+      </ion-item>
+  </ion-list>
+
+  <ion-grid style="background: #fff !important" no-padding>
+    <ion-slides pager="true" paginationType="bullets" class="home-slide" autoplay="3000" loop>
+      <ion-slide *ngFor="let item of slideImages">
+        <img src="{{ item.image | loadImage }}">
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+
+  <ion-card style="background: #fff !important">
+    <ion-row>
+      <ion-col>
+        <p style="font-size: 24px; text-align: center;">SHOP BY CATEGORY</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="padding-top: 16px;border: 1px solid #dedede;" *ngFor="let item of fooditems" col-4 (click)="openPage(item)">
+
+        <img height="90px" src="{{ item.image | loadImage }}">
+        <p text-center> {{item.name}} </p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

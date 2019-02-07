@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>
+      {{this.title}}
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!-- <ion-card style="background: #fff !important"> -->
+    <ion-row padding>
+      <ion-col style="padding-top: 16px;border: 1px solid #dedede;" *ngFor="let item of items" col-6 (click)="openPage(item)">
+
+        <img height="90px" src="{{ item.image | loadImage }}">
+        <p text-center> {{item.name}} </p>
+      </ion-col>
+    </ion-row>
+  <!-- </ion-card>  -->
+
+</ion-content>

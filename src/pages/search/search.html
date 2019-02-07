@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>{{this.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  
+
+
+  <ion-fab right top edge (click)="openCart()">
+    <button ion-fab color= "cart"><ion-icon name="cart"></ion-icon></button>
+  </ion-fab> 
+ 
+  
+  <ion-list>
+        <button ion-item (click)="onClick(item)">
+          <ion-thumbnail item-left>
+         <img src = "{{ this.products.image | loadImage }}">
+           </ion-thumbnail>
+          <h2>{{this.title}}</h2>
+          <h4 style="text-align:start;padding:10px;" >Price:{{this.price}}</h4> 
+        </button>
+  </ion-list>
+ 
+</ion-content>
+

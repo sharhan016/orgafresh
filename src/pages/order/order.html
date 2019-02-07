@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar color="danger">
+      <ion-title text-center>Order Now</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content>
+  
+      <form [formGroup]="orderForm">
+          <ion-item>
+            <ion-label floating>Full Name</ion-label>
+            <ion-input type="text" [(ngModel)]="todo.name" formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Mobile Number</ion-label>
+            <ion-input type="Number" [(ngModel)]="todo.mobile" formControlName="mobile"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Alternative Mobile Number</ion-label>
+              <ion-input type="Number" [(ngModel)]="todo.alternate_mobile" formControlName="alternate_mobile"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Address</ion-label>
+                <ion-input type="text" [(ngModel)]="todo.address" formControlName="address"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label floating>P.O Box</ion-label>
+                  <ion-input type="Number" [(ngModel)]="todo.pobox" formControlName="pobox"></ion-input>
+           </ion-item>
+           <ion-item>
+                    <ion-label floating>City</ion-label>
+                    <ion-input type="text" [(ngModel)]="todo.city" formControlName="city"></ion-input>
+         </ion-item>
+        <ion-item>
+            <ion-label floating>State</ion-label>
+            <ion-input type="text" [(ngModel)]="todo.state" formControlName="state"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>District</ion-label>
+              <ion-input type="text" [(ngModel)]="todo.district" formControlName="district"></ion-input>
+            </ion-item>
+      <div padding>
+          <button ion-button color="primary" block (click)="orderNow()" [disabled]="!orderForm.valid">Order Now</button>
+      </div>
+      </form>
+  
+  </ion-content>
