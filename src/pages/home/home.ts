@@ -14,7 +14,7 @@ import 'rxjs/add/operator/map'
 })
 export class HomePage {
   public fooditems: any = [];
-  public searchedItem = [];
+  
   public product = [];
   public searchTerm: string = '';
   searchControl: FormControl;
@@ -22,7 +22,7 @@ export class HomePage {
   public items = [];
   searching: any = false;
 
-  public slideImages: any[] = [{ id: 0, image: '', created_at: '', updated_at: '' }];
+  public slideImages: any[];
 
   constructor(
     public platform: Platform,
@@ -41,7 +41,7 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
     
     this.setFilteredItems();
-    this.searchControl.valueChanges.debounceTime(700).subscribe(search => {
+    this.searchControl.valueChanges.debounceTime(900).subscribe(search => {
       this.setFilteredItems();
     });
     this.platform.ready().then(() => {
@@ -87,9 +87,8 @@ export class HomePage {
   }
 
   searchItem(item){
-    this.searchedItem = item;
-    console.log(item);
-    this.navCtrl.push('SearchPage',this.searchedItem);
+    this.searchTerm = '';
+    this.navCtrl.push('SearchPage', item);
   }
 
 }

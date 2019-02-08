@@ -24,7 +24,7 @@
   </ion-list>
 
   <ion-grid style="background: #fff !important" no-padding>
-    <ion-slides pager="true" paginationType="bullets" class="home-slide" autoplay="3000" loop>
+    <ion-slides pager="true" paginationType="bullets" class="home-slide" autoplay="3000" loop *ngIf="slideImages">
       <ion-slide *ngFor="let item of slideImages">
         <img src="{{ item.image | loadImage }}">
       </ion-slide>

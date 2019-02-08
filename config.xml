@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.techiez.orgafresh" version="2.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.techiez.orgafresh" version="2.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>OrgaFresh</name>
     <description>Shop home products at ORGAFRESH</description>
     <author email="sharhan.sathar@gmail.com" href="http://google.com/">Techiez Team</author>
@@ -85,5 +85,5 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.1.3" />
     <plugin name="cordova-plugin-network-information" spec="~2.0.1" />
     <plugin name="cordova-plugin-advanced-http" spec="~2.0.1" />
-    <engine name="android" spec="^7.1.1" />
+    <engine name="android" spec="7.1.1" />
 </widget>

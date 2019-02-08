@@ -10,7 +10,6 @@ import 'rxjs/add/operator/map'
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { OrderPage } from '../pages/order/order';
-import { CartPage } from '../pages/cart/cart';
 import { PipesModule } from "../pipes/pipes.module";
 import { Data } from '../providers/data/data';
 
@@ -19,14 +18,13 @@ import { Data } from '../providers/data/data';
     MyApp,
     HomePage,
     OrderPage,
-    CartPage,
 
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    // IonicModule.forRoot({
+    // IonicModule.forRoot(MyApp,{
     //   mode: 'ios',
     //   menuType: 'overlay'
     // }),
@@ -39,7 +37,6 @@ import { Data } from '../providers/data/data';
     MyApp,
     HomePage,
     OrderPage,
-    CartPage,
   ],
   providers: [
     StatusBar,

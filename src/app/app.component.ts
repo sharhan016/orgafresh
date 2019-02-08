@@ -4,7 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Http } from '@angular/http';
 import { HomePage } from '../pages/home/home';
-import { TypeDetailPage } from "../pages/type-detail/type-detail";
 
 @Component({
   templateUrl: 'app.html'

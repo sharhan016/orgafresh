@@ -17,13 +17,7 @@ import 'rxjs/add/operator/map'
   templateUrl: 'search.html',
 })
 export class SearchPage {
-
-  public products : any = [];
-  public title = [];
-  public price : string;
-  public offer_price : string;
-  public bquantiy : string;
-
+  private item : any = {};
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams, 
@@ -36,6 +30,9 @@ export class SearchPage {
   }
 
   ionViewDidLoad() {
+    this.item = this.navParams.data;
+    console.log(this.item);
+    /*
     console.log('ionViewDidLoad SearchPage');
     this.products = this.navParams.data;
     console.log(this.products);
@@ -43,14 +40,12 @@ export class SearchPage {
     this.title=this.products.name;
     console.log(this.title);
     this.price = this.products.price;
-    console.log(this.price);
-    
-        
+    console.log(this.price);        
+    */
   }
 
   onClick(item){
 
-    let product = item;
     let prompt = this.alertCtrl.create({
     title:'Add to Cart',
     inputs:[{ name: 'quantity', placeholder: 'Enter Quantity'}],
@@ -63,9 +58,9 @@ export class SearchPage {
             if(data==null || data.length==0){
               data=[];
               data.push({
-                "product": product,
+                "product": item,
                  "qty": val.quantity,
-                "amount": parseFloat(this.price)* parseFloat(val.quantity)});
+                "amount": parseFloat(item.price)* parseFloat(val.quantity)});
               }
             else
           
@@ -73,11 +68,11 @@ export class SearchPage {
               let added = 0;
               for(let i=0; i<data.length; i++)
               {
-                if(product.id==data[i].product.id)
+                if(item.id==data[i].product.id)
                 {
                   console.log('product is already added in the cart');
                   data[i].qty = parseInt(data[i].qty) + parseInt(val.quantity) ;
-                  data[i].amount=(parseFloat(data[i].this.price) * parseFloat(val.quantity))+ data[i].amount;
+                  data[i].amount=(parseFloat(data[i].product.price) * parseFloat(val.quantity))+ data[i].amount; // there is an error here with this
                   added = 1;
                 }
               }
@@ -88,9 +83,9 @@ export class SearchPage {
                       break;
                 case 0:
                 data.push({
-                      "product": product,
+                      "product": item,
                        "qty": val.quantity,
-                      "amount": parseFloat(this.price)* parseFloat(val.quantity)});
+                      "amount": parseFloat(item.price)* parseFloat(val.quantity)});
                       console.log('case 0 executed');
                       break;
               }
