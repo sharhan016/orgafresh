@@ -27,6 +27,7 @@ export class MyApp {
 
   // Selected Side Menu
   selectedMenu: any;
+  public product : any = [];
 
   constructor(
     public platform: Platform, 
@@ -49,7 +50,7 @@ export class MyApp {
     .subscribe(data => {
       this.items=data;
       this.pages[1].subPages  =  this.items;
-     // this.loader.dismiss();
+  
     });
   }
 
@@ -69,14 +70,12 @@ export class MyApp {
       title: 'Categories',
       subPages: [{
         title: '',
-        component: 'TypeDetailPage'
+        component: 'CategoryPage'
       }]
     }];
   }
 
-  // openPage(page){
-  //   this.nav.setRoot(page.component);
-  // }
+
   openPage(page, index) {
     
     // Reset the content nav to have just this page
@@ -86,8 +85,8 @@ export class MyApp {
       this.menuCtrl.close();
     } else {
       if (this.selectedMenu) {
-        console.log(page);
-        this.nav.push('TypeDetailPage',page);
+        this.product = page;
+        this.nav.push('CategoryPage',this.product);
         this.menuCtrl.close();
         this.selectedMenu = 0;
       } else {

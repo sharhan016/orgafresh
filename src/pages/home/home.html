@@ -12,7 +12,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content style="background-color: #D0D0CE;">
+<ion-content style="background-color: #D0D0CE !important;">
   <ion-searchbar [(ngModel)]="searchTerm" [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
   <div *ngIf="searchTerm" class="spinner-container">
     <ion-spinner></ion-spinner>

@@ -9,6 +9,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import 'rxjs/add/operator/map'
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { CartPage } from '../pages/cart/cart';
 import { OrderPage } from '../pages/order/order';
 import { PipesModule } from "../pipes/pipes.module";
 import { Data } from '../providers/data/data';
@@ -18,6 +19,7 @@ import { Data } from '../providers/data/data';
     MyApp,
     HomePage,
     OrderPage,
+    CartPage
 
   ],
   imports: [
@@ -37,6 +39,7 @@ import { Data } from '../providers/data/data';
     MyApp,
     HomePage,
     OrderPage,
+    CartPage,
   ],
   providers: [
     StatusBar,

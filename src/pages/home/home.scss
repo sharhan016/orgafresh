@@ -21,13 +21,6 @@ page-home {
 	.home-slide {
 		height: 200px !important;
 	}
-	ion-content{
-		 background-color: #D0D0CE;
-		// background-image: url(../../assets/imgs/bg1.jpg);
-	}
-	.ion-page > ion-content{
-		background-color: #D0D0CE;
-	}
 	ion-card{
 		background: transparent !important;
 		//height: 120px !important;
@@ -36,10 +29,5 @@ page-home {
 		font-size: 2.0rem !important;
 		//padding: 2px 2px 2px 18px !important;
 		font-weight: bold;
+	}
 }
-}
-
-// ion-col{
-//     height:150px !important;
-//     margin-left: 13px !important;
-// }

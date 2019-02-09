@@ -39,10 +39,7 @@ export class TypeDetailPage {
     this.items = this.data.items();
   }
   ionViewWillEnter(){
-    //this.presentLoading();
-    //this.load();
-    //console.log(this.navParams.data.product);
-    //console.log(this.navParams.data.product.id);
+   
     }
 
     presentLoading(){
